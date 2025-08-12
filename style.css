@@ -180,6 +180,23 @@ p{ margin: 0 0 1rem; }
   font-size: .95rem;
 }
 
+.project-card__link{
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  position: relative;     /* para o focus e z-index funcionarem bem */
+  z-index: 1;             /* fica acima da moldura ::before do article */
+  border-radius: 14px;    /* casa com o radius do card */
+}
+
+/* Foco visível para teclado */
+.project-card__link:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 14px;
+}
+
 /* Molduras coloridas grossas (conforme screenshots) */
 .projects__grid .project-card:nth-child(1){ --frame: var(--frame-a); }
 .projects__grid .project-card:nth-child(2){ --frame: var(--frame-b); }
@@ -312,3 +329,4 @@ p{ margin: 0 0 1rem; }
 .theme-toggle i{ font-size: 18px; }
 .theme-toggle:hover{ border-color: rgba(34,211,238,.35); }
 .theme-toggle:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+
