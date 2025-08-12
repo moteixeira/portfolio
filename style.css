@@ -273,3 +273,42 @@ p{ margin: 0 0 1rem; }
 @media (prefers-reduced-motion: reduce){
   *{ transition: none !important; animation: none !important; }
 }
+
+
+/* ========= DARK MODE ========= */
+/* ===== Tema claro (apenas overrides de variáveis) ===== */
+.light{
+  --bg: #f7f9fc;
+  --bg-alt: #eef2f8;
+  --card: #ffffff;
+  --surface: #f4f6fb;
+
+  --text: #0e121b;
+  --muted: #556179;
+
+  --accent: #0ea5e9;     /* mantém vibe tech */
+  --accent-2: #7c3aed;
+
+  --border: rgba(10,20,30,.12);
+  --ring: rgba(14,165,233,.35);
+}
+
+/* ===== Botão de alternância de tema ===== */
+.theme-toggle{
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(124,58,237,.18), rgba(34,211,238,.16));
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 50;
+}
+.theme-toggle i{ font-size: 18px; }
+.theme-toggle:hover{ border-color: rgba(34,211,238,.35); }
+.theme-toggle:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
